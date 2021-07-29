@@ -26,6 +26,7 @@ Suno API requires
 #### To run project with docker:
 ####
 1º - copy .env-example-with-docker to .env
+
 ```sh
 -- 2º Build images docker
 docker-compose up --build 
@@ -44,13 +45,15 @@ chown -R www-data:www-data *
 ```
 
 #### To run project without docker:
-copy .env-example-without-docker to .env
+####
+1º - copy .env-example-without-docker to .env
+
 ```sh
--- 1º Build images docker just to run REDIS or install in localhost
+-- 2º Build images docker just to run REDIS or install in localhost
 docker-compose up --build 
 ```
 ```sh
--- 2º Build images docker
+-- 3º Build images docker
 php artisan serve 
 ```
 
