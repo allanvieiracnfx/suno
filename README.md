@@ -22,7 +22,9 @@ Suno API requires
 - [COMPOSER] (https://getcomposer.org/download/)
 - [DOCKER] (https://www.docker.com/products/docker-desktop)
 
-To run project with docker:
+
+#### To run project with docker:
+####
 1º - copy .env-example-with-docker to .env
 ```sh
 -- 2º Build images docker
@@ -41,7 +43,7 @@ composer install
 chown -R www-data:www-data *
 ```
 
-To run project without docker:
+#### To run project without docker:
 copy .env-example-without-docker to .env
 ```sh
 -- 1º Build images docker just to run REDIS or install in localhost
@@ -62,8 +64,8 @@ your preferred browser.
     - install INSOMINIA (https://insomnia.rest/download) or POSTMAN (https://www.postman.com/downloads/)
 
 ### After install, create new request
-  > [GET] -> 'http://localhost:8000/api/globo/notices/list' ->  Default RSS by https://g1.globo.com/rss/g1/economia/
-  > [POST] -> 'http://localhost:8000/api/rss/notices/list' | Body: { "rss_url": "https://g1.globo.com/rss/g1/economia/" }
+  - [GET] -> 'http://localhost:8000/api/globo/notices/list' ->  Default RSS by https://g1.globo.com/rss/g1/economia/
+  - [POST] -> 'http://localhost:8000/api/rss/notices/list' | Body: { "rss_url": "https://g1.globo.com/rss/g1/economia/" }
   Body accept any url feed rss, example:
     - “rss_url”: "https://g1.globo.com/rss/g1/economia/"
     - “rss_url”: "https://noticias.r7.com/feed.xml"
