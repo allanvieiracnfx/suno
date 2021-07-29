@@ -27,7 +27,7 @@ class RssController extends Controller
     }
 
     /**
-     * List all last notices by globo.com
+     * List any rss notices by url
      * @return Object
      */
     public function list(Request $request)

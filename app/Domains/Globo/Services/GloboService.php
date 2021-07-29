@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Domains\Globo\Services;
-use Illuminate\Http\JsonResponse;
 use App\Domains\Rss\Services\RssService;
-use SimplePie;
 
 
 class GloboService

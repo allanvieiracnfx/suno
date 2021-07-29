@@ -70,6 +70,13 @@ your preferred browser.
     - “rss_url”: "https://g1.globo.com/rss/g1/economia/"
     - “rss_url”: "https://noticias.r7.com/feed.xml"
 
+### PRODUCTION TEST
+  - [GET] -> 'http://ec2-3-135-191-68.us-east-2.compute.amazonaws.com/api/globo/notices/list' ->  Default RSS by https://g1.globo.com/rss/g1/economia/
+  - [POST] -> 'http://ec2-3-135-191-68.us-east-2.compute.amazonaws.com/api/rss/notices/list' | Body: { "rss_url": "https://g1.globo.com/rss/g1/economia/" }
+  Body accept any url feed rss, example:
+    - “rss_url”: "https://g1.globo.com/rss/g1/economia/"
+    - “rss_url”: "https://noticias.r7.com/feed.xml"
+
 
 ### To Run Unit Tests with docker
 ```sh
