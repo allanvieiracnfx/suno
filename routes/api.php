@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+/** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+$router->middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+$router->get('/globo/notices/list', [
+    'as' => 'index', 'uses' => 'App\Domains\Globo\Http\Controllers\GloboController@list'
+]);
+
+$router->post('/rss/notices/list', [
+    'as' => 'index', 'uses' => 'App\Domains\Rss\Http\Controllers\RssController@list'
+]);
