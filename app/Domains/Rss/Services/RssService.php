@@ -37,15 +37,12 @@ class RssService
         try{
 
             $value = Cache::get($url);
-
             if(!empty($value)) return new JsonResponse(json_decode($value), 200);
 
             $feed = $this->simplePie;
             $feed->set_feed_url($url);
             $feed->enable_order_by_date(true);
             $feed->enable_cache(false);
-            // $feed->set_cache_location(dirname($_SERVER['DOCUMENT_ROOT'], 1) .'/App/Domains/Rss/Storage/Cache');
-            // $feed->set_cache_duration(1000);
             $feed->init();
             
             $items = $feed->get_items();
@@ -68,7 +65,7 @@ class RssService
             if (Cache::has($url)) {
                 Cache::put($url, json_encode($response), $time);
             }else{
-                Cache::store('redis')->put($url, json_encode($response), $time);
+                Cache::store('file')->put($url, json_encode($response), $time);
             }
 
             return new JsonResponse($response, 200);

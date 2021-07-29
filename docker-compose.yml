@@ -9,11 +9,3 @@ services:
       - 8000:80
     volumes:
       - ./:/var/www/html
-  redis:
-    container_name: suno_redis
-    image: redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - "./data/redis:/data"
-    restart: always

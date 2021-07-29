@@ -25,7 +25,7 @@ Suno API requires
 
 #### To run project with docker:
 ####
-1º - copy .env-example-with-docker to .env
+1º - copy .env-example to .env
 
 ```sh
 -- 2º Build images docker
@@ -46,16 +46,13 @@ chown -R www-data:www-data *
 
 #### To run project without docker:
 ####
-1º - copy .env-example-without-docker to .env
+1º - copy .env-example to .env
 
 ```sh
--- 2º Build images docker just to run REDIS or install in localhost
-docker-compose up --build 
-```
-```sh
--- 3º Build images docker
+-- 2º Build images docker
 php artisan serve 
 ```
+
 
 Verify the deployment by navigating to your server address in
 your preferred browser.
@@ -74,7 +71,7 @@ your preferred browser.
     - “rss_url”: "https://noticias.r7.com/feed.xml"
 
 
-#### To Run Unit Tests with docker
+### To Run Unit Tests with docker
 ```sh
 docker exec -it suno_app_1 bash
 ```
@@ -82,12 +79,24 @@ docker exec -it suno_app_1 bash
 ./vendor/bin/phpunit
 ```
 
-#### To Run Unit Tests without docker
+#### IF RUN TEST RETURN "Test directory "/var/www/html/./tests/Unit" not found" RUN THIS COMMAND AND TRY AGAIN!
+
+```sh
+php artisan make:test UserTest --unit
+```
+
+### To Run Unit Tests without docker
 ```sh
 php artisan serve
 ```
 ```sh
 ./vendor/bin/phpunit
+```
+
+#### IF RUN TEST RETURN "Test directory "/var/www/html/./tests/Unit" not found" RUN THIS COMMAND AND TRY AGAIN!
+
+```sh
+php artisan make:test UserTest --unit
 ```
 
 ## License
