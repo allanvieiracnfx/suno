@@ -34,6 +34,8 @@ class RssService
     public function list($url)
     {
 
+        if(empty($url)) return new JsonResponse([ 'error' => 'rss_url is invalid.' ], 400);
+
         try{
 
             $value = Cache::get($url);
